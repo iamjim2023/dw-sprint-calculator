@@ -6,9 +6,17 @@ const secondOperend = document.querySelector('.calculator__operend--right');
 const calculatedResult = document.querySelector('.calculator__result');
 
 function calculate(n1, operator, n2) {
+  firstOperend = n1;
+  ope = operator;
+  secondOperend = n2;
   let result = 0;
+
   // TODO : make function to operate according to the n1, n2, operator.
   // ex) if input is n1 : '1', operator : '+', n2 : '2' , 3 will be returned.
+
+  if(n1 === n2){
+
+  }
   return String(result);
 }
 
@@ -20,21 +28,23 @@ buttons.addEventListener('click', function (event) {
   const buttonContent = target.textContent;
   // ! DO NOT MODIFY(Line 19 - 21).
 
-  if (target.matches('button')) {
+  if (target.matches('button')){
     // TODO : make your code to operate calculator
-    if (action === 'number') {
-      console.log('number ' + buttonContent + ' button');
+    if (action === 'number1') {
+        firstOperend.innerText = buttonContent;
     }
-
     if (action === 'operator') {
       console.log('operator ' + buttonContent + ' button');
     }
 
     if (action === 'decimal') {
+      
     }
-
     if (action === 'clear') {
-      console.log('clear button');
+      firstOperend.innerText = "0";
+      operator.innerText = "+";
+      secondOperend.innerText = "0";
+      calculatedResult.innerText = "0";
     }
 
     if (action === 'calculate') {
@@ -42,7 +52,6 @@ buttons.addEventListener('click', function (event) {
     }
   }
 });
-
 // ! Advanced Challenge test and Nightmare test.
 const display = document.querySelector('.calculator__display--for-advanced');
 let firstNum, operatorForAdvanced, previousKey, previousNum;
