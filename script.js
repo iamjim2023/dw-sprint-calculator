@@ -6,8 +6,14 @@ const secondOperend = document.querySelector('.calculator__operend--right');
 const calculatedResult = document.querySelector('.calculator__result');
 
 function calculate(n1, operator, n2) {
+  const a = n1;
+  const eq = operator;
+  const b = n2;
   let result = 0;
 
+  if (n1 + n2){
+
+  }
   // TODO : make function to operate according to the n1, n2, operator.
   // ex) if input is n1 : '1', operator : '+', n2 : '2' , 3 will be returned.
   return String(result);
@@ -34,7 +40,7 @@ buttons.addEventListener('click', function (event) {
   }
 });
 
-// this field is for number1 
+// this field is for numbers
 buttons.addEventListener('click', function (event) {
 
   const target = event.target;
@@ -42,11 +48,15 @@ buttons.addEventListener('click', function (event) {
   const buttonContent = target.textContent;
 
   if (target.matches('button')){
-  if (action === 'number') {
+    if (action === 'number') {
       firstOperend.innerText = buttonContent;
       console.log('You click the first number ' + buttonContent);
+      }
+    if (action === 'number') {
+        secondOperend.innerText = buttonContent;
+        console.log('You click the second number ' + buttonContent);
+      }
     }
-  }
 });
 
 // this is for operator
@@ -60,12 +70,6 @@ buttons.addEventListener('click', function (event) {
   if (action === 'operator') {
       operator.innerText = buttonContent;
       console.log('You click an operator ' + buttonContent);
-    }
-    if (firstOperend.value === true){
-      if (action === 'number'){
-        secondOperend.innerText = buttonContent;
-        console.log('You click the second number ' + buttonContent);
-      }
     }
   }
 });
