@@ -9,7 +9,7 @@ function calculate(n1, opertor, n2) {
   firstOperend = n1;
   operator = opertor;
   secondOperend = n2;
-  let result 
+  let result = calculatedResult;
 
   if (opertor === '+'){
     return n1 + n2;
@@ -25,6 +25,7 @@ function calculate(n1, opertor, n2) {
   {
     alert('Enter the number first.');
   }
+  return result
 }
 
 // this field is for numbers
@@ -53,7 +54,13 @@ buttons.addEventListener('click', function (event) {
   if (action === 'operator') {
       operator.innerText = buttonContent;
       console.log('You click an operator ' + buttonContent);
-    }
+    }else if(operator.buttonContent === true){
+       firstOperend.buttonContent = secondOperend.innerText;
+        if(action === 'numbers'){
+          secondOperend.innerText = buttonContent;
+          console.log('You click the first number ' + buttonContent);
+        }
+      }
   }
 });
 
@@ -83,8 +90,8 @@ buttons.addEventListener('click', function (event) {
 
   if (target.matches('button')){
     if (action === 'calculate') {
-      console.log('Numbers has been compute', );
-      calculatedResult.target = calculate;
+      calculatedResult.buttonContent = calculate;
+      console.log('Numbers has been compute', calculate);
     }
   }
 });
