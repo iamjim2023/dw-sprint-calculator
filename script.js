@@ -7,99 +7,77 @@ const calculatedResult = document.querySelector('.calculator__result');
 
 function calculates(n1, opertor, n2) {
   firstOperend = n1;
-  operator = opertor;
+  operator = opertor,
   secondOperend = n2;
   let result;
 
   if (opertor === '+'){
-    result = n1 + n2;
+    return n1 + n2;
   }else if(opertor === '-'){
-    result = n1 - n2;
+    return n1 - n2;
   }
   else if(opertor === '*'){
-    result = n1 * n2;
+    return n1 * n2;
   }
   else if(opertor === '/'){
-    result = n1 / n2;
+    return n1 / n2;
   }
-  return result;
+    // TODO : make function to operate according to the n1, n2, operator.
+  // ex) if input is n1 : '1', operator : '+', n2 : '2' , 3 will be returned.
+  return String(result);
 }
 
-// this field is for numbers
 buttons.addEventListener('click', function (event) {
+    // will be triggered when click the buttons.
+
   const target = event.target;
   const action = target.classList[0];
   const buttonContent = target.textContent;
+    // ! DO NOT MODIFY(Line 19 - 21).
 
   if (target.matches('button')){
+    // TODO : make your code to operate calculator
+
+      // this field is for the numbers
     if (action === 'number') {
       firstOperend.innerText = buttonContent;
       console.log('You click the first number ' + buttonContent);
+        }else if(firstOperend.target === true && firstOperend.buttonContent === true){
+          firstOperend.target = false;
+          firstOperend.buttonContent = false;
+        }else if(secondOperend.target === false && secondOperend.buttonContent === false){
+          secondOperend.target = true;
+          secondOperend.buttonContent = true;
+          secondOperend.innerText = buttonContent;
+          console.log('You click the second number ' + buttonContent);
+        }
+
+      // this field is for operator
+    if (action === 'operator') {
+        operator.innerText = buttonContent;
+        console.log('You click an operator this ' + buttonContent);
       }
-    }
-});
 
-// this is for operator
-buttons.addEventListener('click', function (event) {
-  const target = event.target;
-  const action = target.classList[0];
-  const buttonContent = target.textContent;
-
-  if (target.matches('button')){
-  if (action === 'operator') {
-      operator.innerText = buttonContent;
-      console.log('You click an operator this ' + buttonContent);
-    }else if(action === 'number'){
-      secondOperend.innerText = buttonContent;
-      console.log('You click the second number ' + buttonContent);
-    }
-  }
-});
-
-// Clear Numbers
-buttons.addEventListener('click', function (event) {
-  const target = event.target;
-  const action = target.classList[0];
-
-  if (target.matches('button')){
-    if (action === 'clear') {
-	  console.log('You clear the numbers and operator');
-    firstOperend.innerText = "0";
-    operator.innerText = "+";
-    secondOperend.innerText = "0";
-    calculatedResult.innerText = "0";
-    }
-  }
-});
-
-// calculate the numbers
-buttons.addEventListener('click', function (event) {
-  const target = event.target;
-  const action = target.classList[0];
-  const buttonContent = target.textContent;
-
-  if (target.matches('button')){
-    if (action === 'calculate') {
-      calculates = calculatedResult.innerText;
-      console.log('The total number is', calculates);
-    }
-  }
-});
-
-// this is for decimal
-buttons.addEventListener('click', function (event) {
-  const target = event.target;
-  const action = target.classList[0];
-
-  if (target.matches('button')){
+      // this field is for decimal
     if (action === 'decimal') {
-      alert('Decimal is not working. please dont click the decimal ty. :)');
+        alert('Decimal still not working. please dont click the decimal ty. :)');
+      }
+
+      // this field is for clearing the numbers
+    if (action === 'clear') {
+      console.log('You clear the numbers and operator');
       firstOperend.innerText = "0";
       operator.innerText = "+";
       secondOperend.innerText = "0";
       calculatedResult.innerText = "0";
+      }
+
+      // this field is for calculate
+      if (action === 'calculate') {
+        calculates = calculatedResult.innerText;
+        console.log('The total number is', calculates);
+      }
     }
-  }
 });
 
 // ! Advanced Challenge test and Nightmare test.
