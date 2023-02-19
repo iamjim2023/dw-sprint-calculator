@@ -5,32 +5,28 @@ const operator = document.querySelector('.calculator__operator');
 const secondOperend = document.querySelector('.calculator__operend--right');
 const calculatedResult = document.querySelector('.calculator__result');
 
-function calculate(n1, opertor, n2) {
+function calculates(n1, opertor, n2) {
   firstOperend = n1;
   operator = opertor;
   secondOperend = n2;
-  let result = calculatedResult;
+  let result;
 
   if (opertor === '+'){
-    return n1 + n2;
+    result = n1 + n2;
   }else if(opertor === '-'){
-    return n1 - n2;
+    result = n1 - n2;
   }
   else if(opertor === '*'){
-    return n1 * n2;
+    result = n1 * n2;
   }
   else if(opertor === '/'){
-    return n1 / n2;
-  }else(n1 === '0' && opertor === '+' && n2 === '0')
-  {
-    alert('Enter the number first.');
+    result = n1 / n2;
   }
-  return result
+  return result;
 }
 
 // this field is for numbers
 buttons.addEventListener('click', function (event) {
-
   const target = event.target;
   const action = target.classList[0];
   const buttonContent = target.textContent;
@@ -45,7 +41,6 @@ buttons.addEventListener('click', function (event) {
 
 // this is for operator
 buttons.addEventListener('click', function (event) {
-
   const target = event.target;
   const action = target.classList[0];
   const buttonContent = target.textContent;
@@ -53,20 +48,16 @@ buttons.addEventListener('click', function (event) {
   if (target.matches('button')){
   if (action === 'operator') {
       operator.innerText = buttonContent;
-      console.log('You click an operator ' + buttonContent);
-    }else if(operator.buttonContent === true){
-       firstOperend.buttonContent = secondOperend.innerText;
-        if(action === 'numbers'){
-          secondOperend.innerText = buttonContent;
-          console.log('You click the first number ' + buttonContent);
-        }
-      }
+      console.log('You click an operator this ' + buttonContent);
+    }else if(action === 'number'){
+      secondOperend.innerText = buttonContent;
+      console.log('You click the second number ' + buttonContent);
+    }
   }
 });
 
 // Clear Numbers
 buttons.addEventListener('click', function (event) {
-
   const target = event.target;
   const action = target.classList[0];
 
@@ -83,29 +74,30 @@ buttons.addEventListener('click', function (event) {
 
 // calculate the numbers
 buttons.addEventListener('click', function (event) {
-
   const target = event.target;
   const action = target.classList[0];
   const buttonContent = target.textContent;
 
   if (target.matches('button')){
     if (action === 'calculate') {
-      calculatedResult.buttonContent = calculate;
-      console.log('Numbers has been compute', calculate);
+      calculates = calculatedResult.innerText;
+      console.log('The total number is', calculates);
     }
   }
 });
 
 // this is for decimal
 buttons.addEventListener('click', function (event) {
-
   const target = event.target;
   const action = target.classList[0];
-  const buttonContent = target.textContent;
 
   if (target.matches('button')){
     if (action === 'decimal') {
-      alert('Decimal is not working. please dont click this decimal sh1t.');
+      alert('Decimal is not working. please dont click the decimal ty. :)');
+      firstOperend.innerText = "0";
+      operator.innerText = "+";
+      secondOperend.innerText = "0";
+      calculatedResult.innerText = "0";
     }
   }
 });
