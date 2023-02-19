@@ -5,16 +5,14 @@ const operator = document.querySelector('.calculator__operator');
 const secondOperend = document.querySelector('.calculator__operend--right');
 const calculatedResult = document.querySelector('.calculator__result');
 
-function calculate(n1, operators, n2) {
-  firstOperend = n1;
-  operator = operators;
-  secondOperend = n2;
+function calculate(n1, operator, n2) {
   let result = 0;
 
   // TODO : make function to operate according to the n1, n2, operator.
   // ex) if input is n1 : '1', operator : '+', n2 : '2' , 3 will be returned.
   return String(result);
 }
+
 
 buttons.addEventListener('click', function (event) {
   // will be triggered when click the buttons.
@@ -26,25 +24,65 @@ buttons.addEventListener('click', function (event) {
 
   if (target.matches('button')){
     // TODO : make your code to operate calculator
-    if (action === 'number') {
-      console.log('number');
+    if (action === 'decimal') {
+      alert('Decimal is not working. please dont click this decimal sh1t.');
     }
 
-    if (action === 'operator') {
-      console.log('');
+    if (action === 'calculate') {
+      console.log('compute button');
     }
-    if (action === 'decimal') {
-      alert('No decimal please!');
-      firstOperend.innerText = "0";
-      operator.innerText = "+";
-      secondOperend.innerText = "0";
-      calculatedResult.innerText = "0";
+  }
+});
+
+// this field is for number1 
+buttons.addEventListener('click', function (event) {
+
+  const target = event.target;
+  const action = target.classList[0];
+  const buttonContent = target.textContent;
+
+  if (target.matches('button')){
+  if (action === 'number') {
+      firstOperend.innerText = buttonContent;
+      console.log('You click the first number ' + buttonContent);
     }
+  }
+});
+
+// this is for operator
+buttons.addEventListener('click', function (event) {
+
+  const target = event.target;
+  const action = target.classList[0];
+  const buttonContent = target.textContent;
+
+  if (target.matches('button')){
+  if (action === 'operator') {
+      operator.innerText = buttonContent;
+      console.log('You click an operator ' + buttonContent);
+    }
+    if (firstOperend.value === true){
+      if (action === 'number'){
+        secondOperend.innerText = buttonContent;
+        console.log('You click the second number ' + buttonContent);
+      }
+    }
+  }
+});
+
+// Clear Numbers
+buttons.addEventListener('click', function (event) {
+
+  const target = event.target;
+  const action = target.classList[0];
+
+  if (target.matches('button')){
     if (action === 'clear') {
-      firstOperend.innerText = "0";
-      operator.innerText = "+";
-      secondOperend.innerText = "0";
-      calculatedResult.innerText = "0";
+	  console.log('You clear the numbers and operator');
+    firstOperend.innerText = "0";
+    operator.innerText = "+";
+    secondOperend.innerText = "0";
+    calculatedResult.innerText = "0";
     }
   }
 });
