@@ -5,61 +5,59 @@ const operator = document.querySelector(".calculator__operator");
 const secondOperend = document.querySelector(".calculator__operend--right");
 const calculatedResult = document.querySelector(".calculator__result");
 
-function calculates(n1, opertor, n2) {
-  firstOperend = n1;
-  (operator = opertor), (secondOperend = n2);
-  let result;
+function calculate(n1, operator, n2) {
+  let result = 0;
 
-  if (opertor === "+") {
-    return n1 + n2;
-  } else if (opertor === "-") {
-    return n1 - n2;
-  } else if (opertor === "*") {
-    return n1 * n2;
-  } else if (opertor === "/") {
-    return n1 / n2;
+  if (operator === "+") {
+    result = Number(n1) + Number(n2);
+  } else if (operator === "-") {
+    result = Number(n1) - Number(n2);
+  } else if (operator === "*") {
+    result = Number(n1) * Number(n2);
+  } else if (operator === "/") {
+    result = Number(n1) / Number(n2);
   }
-  // TODO : make function to operate according to the n1, n2, operator.
-  // ex) if input is n1 : '1', operator : '+', n2 : '2' , 3 will be returned.
   return String(result);
 }
+let num1;
+let num2;
+let oper;
 
 buttons.addEventListener("click", function (event) {
-  // will be triggered when click the buttons.
-
   const target = event.target;
   const action = target.classList[0];
   const buttonContent = target.textContent;
-  // ! DO NOT MODIFY(Line 19 - 21).
 
   if (target.matches("button")) {
-    // TODO : make your code to operate calculator
     if (action === "number") {
-      console.log(firstOperend.innerText === "0");
-      console.log(typeof firstOperend.innerText);
-      console.log(typeof 0);
-      console.log(firstOperend === 0);
-
-      if (firstOperend.innerText === "0") {
+      console.log("number " + buttonContent + " button");
+      if (firstOperend.textContent === "0") {
+        firstOperend.textContent = buttonContent;
+        num1 = buttonContent;
+      } else if (firstOperend.textContent !== "0") {
+        secondOperend.textContent = buttonContent;
+        num2 = buttonContent;
       }
     }
+
     if (action === "operator") {
-      operator.innerText = buttonContent;
-      console.log("You click an operator this " + buttonContent);
+      console.log("Operator " + buttonContent + " button");
+      operator.textContent = buttonContent;
+      oper = buttonContent;
     }
     if (action === "decimal") {
-      alert("Decimal still not working. please dont click the decimal ty. :)");
+      alert("decimal doesnt work. please dont click this button.");
     }
     if (action === "clear") {
-      console.log("You clear the numbers and operator");
-      firstOperend.innerText = "0";
-      operator.innerText = "+";
-      secondOperend.innerText = "0";
-      calculatedResult.innerText = "0";
+      console.log("reset button");
+      firstOperend.textContent = "0";
+      operator.textContent = "+";
+      secondOperend.textContent = "0";
+      calculatedResult.textContent = "0";
     }
     if (action === "calculate") {
-      calculates = calculatedResult.innerText;
-      console.log("The total number is", calculates);
+      console.log("calculate button");
+      calculatedResult.textContent = calculate(num1, oper, num2);
     }
   }
 });

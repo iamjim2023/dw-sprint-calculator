@@ -26,37 +26,44 @@ body {
 }
 
 .calculator {
-  background-color: #4000c7;
+  background-color: #16213E;
   width: 350px;
-  height: 500px;
-  border-radius: 10px;
+  height: 600px;
+  border-radius: 0px;
   padding: 30px 20px;
 }
 
 .calculator__display--bare {
   /* display: none; */
-  background-color: #ffffff;
+  background-color: #16213E;
+  color: white;
   text-align: center;
   vertical-align: middle;
   height: 100px;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 1px;
   font-size: 20px;
-  padding: 25px 15px;
+  padding: 5px 15px;
   overflow: hidden;
   overflow-wrap: break-word;
 }
 
 .calculator__display--bare > span {
+  position: relative;
   display: inline-block;
   text-align: center;
-  background-color: #f3f0fc;
+  background-color: #16213E;
+  color: white;
   margin: 5px;
   width: 40px;
   height: 45px;
   border-radius: 10px;
   font-size: 20px;
   padding: 10px 5px;
+}
+
+.calcu_eq{
+  left: 100px;
 }
 
 .calculator__display--for-advanced {
@@ -74,18 +81,20 @@ body {
 }
 
 .calculator__buttons {
-  background-color: #ffffff;
+  background-color: #16213E ;
+  color: white;
   width: 100%;
-  height: 330px;
-  margin-top: 10px;
+  height: 440px;
+  margin-top: 5px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
 .clear__and__enter {
-  height: 50px;
+  height: 80px;
   margin: 10px;
-  background-color: #f3f0fc;
+  background-color: #16213E;
+  color: white;
 }
 
 .clear__and__enter > button {
@@ -93,7 +102,8 @@ body {
   width: 50px;
   height: 40px;
   margin: 0px 5px;
-  background-color: #00da75;
+  color: white;
+  background-color: cyan;
   cursor: pointer;
   outline: none;
 }
@@ -101,7 +111,8 @@ body {
 .button__row {
   height: 50px;
   margin: 10px;
-  background-color: #f3f0fc;
+  background-color: #16213E;
+  color: white;
 }
 
 .button__row > button {
@@ -110,25 +121,66 @@ body {
   border-radius: 10px;
   cursor: pointer;
   outline: none;
-  background-color: #ebebeb;
+  background-color: #0F3460;
+  color: white;
 }
 
 .button__row > .operator {
-  color: #ffffff;
-  background-color: #313132;
+  color: white;
+  background-color: cyan;
 }
 
 .button__row > .double {
-  width: 115px;
+  width: 50px;
 }
 
 .button__row > .isPressed {
   background-color: #00da75;
 }
 
+#divide {
+  position: relative;
+  left: 54px;
+  top: -180px;
+}
+#addition {
+  position: relative;
+  bottom: -180px;
+}
+#enter {
+  position: relative;
+  bottom: -240px;
+  left: 40px;
+}
+#fNum1 {
+  position: relative;
+  top: 35px;
+  left: 150px;
+}
+#calcuOperator {
+  position: relative;
+  top: 35px;
+  left: 130px;
+}
+#fNum2 {
+  position: relative;
+  top: 35px;
+  left: 111px;
+}
+#equal {
+  position: relative;
+  left: -180px;
+  font-size: 30px;
+}
+#calcu-result {
+  font-size: 30px
+}
 .logo {
   position: fixed;
   padding: 30px;
   bottom: 0px;
   right: 0px;
+}
+.calculator__display--bare > calculator__operend--lef{
+position: relative;
 }
