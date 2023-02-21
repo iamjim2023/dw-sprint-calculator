@@ -10,41 +10,46 @@
 <body>
     <div class="container">
       <div class="calculator">
+        
         <div class="calculator__display--bare">
           <span class="calculator__operend--left" id="fNum1">0</span>
           <span class="calculator__operator" id="calcuOperator">+</span>
           <span class="calculator__operend--right" id="fNum2">0</span>
           <span class="calculator__equal" id="equal">=</span>
           <span class="calculator__result" id="calcu-result">0</span>
+          <hr class="line">
         </div>
+        <hr style="height:1px;border-width:0;color:gray;background-color:gray" id="line">
         <div class="calculator__display--for-advanced">0</div>
         <div class="calculator__buttons">
           <div class="clear__and__enter">
-            <button class="clear" id="refresh">AC</button>
-            <button class="calculate" id="enter">=</button>
+            <button class="clear" id="refresh">CE</button>
+            <button class="add-minus" id="addition-minus">+/-</button>
+            <button class="percentage" id="percent">%</button>
           </div>
-          <div class="button__row">
-            <button class="number">7</button>
-            <button class="number">8</button>
-            <button class="number">9</button>
-            <button class="operator" id="addition">+</button>
+          <div class="button__row" id="button__row1">
+            <button class="number" id="num7">7</button>
+            <button class="number" id="num8">8</button>
+            <button class="number" id="num9">9</button>
           </div>
-          <div class="button__row">
-            <button class="number">4</button>
-            <button class="number">5</button>
-            <button class="number">6</button>
+          <div class="button__row" id="button__row2">
+            <button class="number" id="num4">4</button>
+            <button class="number" id="num5">5</button>
+            <button class="number" id="num6">6</button>
             <button class="operator" id="minus">-</button>
           </div>
-          <div class="button__row">
-            <button class="number">1</button>
-            <button class="number">2</button>
-            <button class="number">3</button>
+          <div class="button__row" id="button__row3">
+            <button class="number" id="num1">1</button>
+            <button class="number" id="num2">2</button>
+            <button class="number" id="num3">3</button>
             <button class="operator" id="multiply">*</button>
+            <button class="operator" id="addition">+</button>
           </div>
-          <div class="button__row">
-            <button class="number double">0</button>
-            <button class="decimal">.</button>
+          <div class="button__row" id="button__row4">
+            <button class="number double" id="num0">0</button>
+            <button class="decimal" id="dots">.</button>
             <button class="operator" id="divide">/</button>
+            <button class="calculate" id="enter">=</button>
           </div>
         </div>
       </div>

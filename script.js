@@ -39,7 +39,6 @@ buttons.addEventListener("click", function (event) {
         num2 = buttonContent;
       }
     }
-
     if (action === "operator") {
       console.log("Operator " + buttonContent + " button");
       operator.textContent = buttonContent;
@@ -58,6 +57,13 @@ buttons.addEventListener("click", function (event) {
     if (action === "calculate") {
       console.log("calculate button");
       calculatedResult.textContent = calculate(num1, oper, num2);
+    }
+    // addition function for other buttons.
+    if (action === "add-minus") {
+      alert("This button '=/-'' is not working.");
+    }
+    if (action === "percentage") {
+      alert("This button '%' is not working.");
     }
   }
 });
