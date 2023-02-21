@@ -88,6 +88,7 @@ body {
   margin-top: 5px;
   padding: 10px;
   border-radius: 1px;
+  font-size: 80px;
 }
 
 .clear__and__enter {
@@ -138,19 +139,33 @@ body {
   background-color: #00da75;
 }
 
+#refresh {
+  position: relative;
+  bottom: -30px;
+  left: -6px;
+}
 #divide {
   position: relative;
-  left: 54px;
-  top: -180px;
+  left: 72px;
+  top: -240px;
+}
+#minus {
+  position: relative;
+  top: -60px;
+}
+#multiply {
+  position: relative;
+  top: -60px;
 }
 #addition {
   position: relative;
-  bottom: -180px;
+  bottom: -150px;
+  height: 100px;
 }
 #enter {
   position: relative;
-  bottom: -240px;
-  left: 40px;
+  bottom: -270px;
+  left: 58px;
 }
 #fNum1 {
   position: relative;
@@ -169,11 +184,13 @@ body {
 }
 #equal {
   position: relative;
-  left: -180px;
+  left: -182px;
   font-size: 30px;
 }
 #calcu-result {
-  font-size: 30px
+  font-size: 30px;
+  left: -37px;
+  width: auto;
 }
 .logo {
   position: fixed;
